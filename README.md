@@ -28,6 +28,10 @@
              - date_emprunt : Date à laquelle le membre à emprunter
              - date_retour : Date à laquelle le membre doit rendre le livre
 
+## Etape 2
+
+**capture d'écran du diagramme**
+
 ## Etape 3
 
 1ère forme normale
@@ -58,3 +62,18 @@ Si une colonne "Catégorie_Livre" dépend de "ID_Catégorie", et que "ID_Catégo
 Résultat :
 
 Les tables proposées sont déjà conformes à la 3NF, car chaque attribut dépend uniquement de la clé primaire.
+
+## Etape 4
+
+create_tables.sql : Contient les requêtes pour créer les tables de la base de données.
+
+## Etape 5
+
+insert_data.sql : Contient des exemples d'insertion de données.
+
+## Etape 6
+
+request.sql : contient des requêtes SQL avancées avec des jointures et des agrégations.
+
+## Etape 7
+
