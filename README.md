@@ -77,3 +77,79 @@ request.sql : contient des requêtes SQL avancées avec des jointures et des agr
 
 ## Etape 7
 
+## Rapport Final : Gestion d'une Bibliothèque
+## Introduction
+Ce projet vise à modéliser et implémenter une base de données pour une bibliothèque, permettant de gérer les livres, les membres, les emprunts et les demandes. L'objectif principal était de concevoir une structure relationnelle respectant les normes de modélisation, d'insérer des données et de réaliser des requêtes complexes.
+
+## Processus de création
+### Étape 1 : Analyse des besoins
+Une analyse des besoins a permis d'identifier les entités suivantes :
+
+Livres : pour gérer les informations des ouvrages disponibles.
+Membres : pour gérer les utilisateurs inscrits à la bibliothèque.
+Emprunts : pour suivre les livres empruntés.
+Demandes : pour gérer les requêtes de réservation ou de disponibilité des livres.
+
+### Étape 2 : Modélisation relationnelle
+Un diagramme ERD a été réalisé pour visualiser les entités et leurs relations. Voici les principaux éléments du modèle :
+
+Relations :
+Un membre peut emprunter plusieurs livres.
+Un livre peut faire l'objet de plusieurs emprunts ou demandes.
+Cardinalités :
+Chaque emprunt est associé à un seul livre et un seul membre.
+Chaque demande est associée à un seul livre et un seul membre.
+Diagramme ERD :
+
+### Étape 3 : Normalisation
+Le modèle a été normalisé pour respecter les trois premières formes normales (1NF, 2NF, 3NF). Voici les ajustements effectués :
+
+1NF : Élimination des attributs multi-valeurs ou non atomiques (par exemple, un membre avec plusieurs numéros de téléphone aurait été divisé en plusieurs enregistrements).
+2NF : Suppression des dépendances partielles en s'assurant que chaque table dépend uniquement de la clé primaire.
+3NF : Élimination des dépendances transitives, comme une table intermédiaire contenant des informations redondantes sur les livres et les emprunts.
+
+### Étape 4 : Création des tables
+Les tables ont été créées à l'aide du script create_tables.sql. Les contraintes suivantes ont été appliquées :
+
+Clés primaires : livre_id, membre_id, emprunt_id, et demande_id.
+Clés étrangères : Relations entre les tables pour assurer l'intégrité référentielle.
+Types de données : Par exemple, VARCHAR pour les noms et DATE pour les dates.
+
+### Étape 5 : Insertion des données
+Le script insert_data.sql contient des données fictives pour illustrer le fonctionnement du modèle. Trois enregistrements par table ont été insérés :
+
+Livres : Exemples d'œuvres littéraires variées.
+Membres : Profils fictifs pour tester les relations.
+Emprunts : Données d'exemple pour les livres actuellement empruntés.
+Demandes : Requêtes fictives pour tester les réservations.
+
+### Étape 6 : Requêtes avancées
+Trois requêtes SQL avancées ont été rédigées pour démontrer les relations entre les tables :
+
+Liste des livres empruntés avec les informations des membres :
+Permet de visualiser quels membres ont emprunté quels livres.
+Nombre total de livres empruntés par chaque membre :
+Identifie les membres les plus actifs.
+Liste des demandes en attente :
+Affiche les livres réservés par les membres et leur statut.
+Exemple de résultat pour la requête 1 :
+
+emprunt_id	titre	nom	prenom	date_emprunt	date_retour
+1	1984	Dupont	Jean	2024-12-01	NULL
+2	Les Misérables	Martin	Marie	2024-12-05	2024-12-10
+Défis rencontrés et solutions
+Défis
+Problème de connexion à MySQL via VS Code :
+L'installation initiale n'a pas reconnu la commande mysql.
+Solution : Installation correcte du serveur MySQL et configuration des variables d'environnement.
+
+Conception des relations :
+Une hésitation entre l'utilisation d'une table pour les transactions et la séparation entre les emprunts et les demandes.
+Solution : Maintien de la clarté en séparant ces deux entités pour refléter des processus distincts.
+
+Respect des cardinalités :
+La définition des clés étrangères nécessitait une attention particulière.
+Solution : Vérifications et ajustements fréquents dans le diagramme ERD.
+
+## Conclusion
+Ce projet a permis de concevoir et d'implémenter une base de données fonctionnelle pour une bibliothèque. Le modèle relationnel a été respecté, et les scripts SQL fournis permettent de tester facilement la structure et les relations.
