@@ -31,6 +31,8 @@
 ## Etape 2
 
 **capture d'écran du diagramme**
+<img width="346" alt="Capture d'écran 2024-12-10 190040" src="https://github.com/user-attachments/assets/cd653b55-7997-4bfb-91e8-38a5d5f9b62a">
+
 
 ## Etape 3
 
