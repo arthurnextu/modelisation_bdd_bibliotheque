@@ -24,6 +24,7 @@
 - Emprunts : - id_emprunt (clé primaire) : Identifiant unique de l'emprunt
              - id_livre (clé étrangère) : Référence au livre concerné
              - id_membre (clé étrangère) : Référence au membre ayant fait l'emprunt
+             - id_demande (clé étrangère) : Référence au type de demande 
              - date_emprunt : Date à laquelle le membre à emprunter
              - date_retour : Date à laquelle le membre doit rendre le livre
 
