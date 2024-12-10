@@ -4,7 +4,7 @@
 
 --Entités-- --Attributs--
 - Livres :   - id_livre (clé primaire) : Identifiant unique du livre
-             - titre : Nom du livre
+             - nom : Nom du livre
              - date_parution : Date de parution du livre
              - auteur : Auteur(e) du livre
 
